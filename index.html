@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mariage de Raoul &amp; Nimosette</title>
+<meta name="theme-color" content="#0B1E5B">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500&family=Cinzel:wght@400;500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+<div id="intro">
+  <div class="env">
+    <div class="back"></div>
+    <div class="card"><span class="script" data-t="noms"></span></div>
+    <div class="pocket"></div><div class="flap"></div>
+    <div class="seal" data-t="initiales"></div>
+  </div>
+  <button id="open" type="button">Ouvrir notre invitation</button>
+</div>
+
+<main id="site">
+  <header class="hero">
+    <img class="bg" data-photo alt="">
+    <div class="veil"></div>
+    <div class="hero-in">
+      <img class="portrait" data-photo alt="Raoul et Nimosette">
+      <p class="sub">Nous nous marions</p>
+      <h1 class="script"><span data-t="prenom1"></span><span class="amp">&amp;</span><span data-t="prenom2"></span></h1>
+      <p class="date" data-t="dateTexte"></p>
+      <p class="welcome" data-t="accueil"></p>
+      <div class="cd" id="cd" aria-live="off"></div>
+    </div>
+  </header>
+
+  <section id="histoire"><p class="sub">Notre histoire</p><h2 class="words">Comment tout a commencé</h2><ol class="tl" id="tl"></ol></section>
+
+  <section class="wide" id="galerie"><p class="sub">Galerie</p><h2 class="words">Quelques instants à nous</h2><div class="gal" id="gal"></div></section>
+
+  <section id="programme"><p class="sub">Le programme</p><h2 class="words">Le déroulé de la journée</h2><ul class="prog" id="prog"></ul></section>
+
+  <section id="lieu"><p class="sub">Le lieu</p><h2 class="words">Où nous retrouver</h2>
+    <p class="place"><strong data-t="salle"></strong><br><span data-t="adresseComplete"></span></p>
+    <iframe id="map" title="Carte du lieu" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <a class="btn" id="route" target="_blank" rel="noopener">Ouvrir l’itinéraire</a></section>
+
+  <section id="tenue"><p class="sub">Tenue</p><h2 class="words">Le code vestimentaire</h2><p data-t="tenueTexte"></p><div class="sws" id="sws"></div></section>
+
+  <section id="rsvp"><p class="sub">Réponse</p><h2 class="words">Confirmer ma présence</h2>
+    <p>Merci de nous répondre avant le <strong data-t="limite"></strong>.</p>
+    <p class="tels" id="tels"></p>
+    <a class="btn" id="rsvpBtn" target="_blank" rel="noopener">Confirmer ma présence</a></section>
+
+  <footer><p class="script big" data-t="initiales"></p><p class="merci">Merci de faire partie de notre histoire</p><p class="sub" data-t="hashtag"></p></footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@ const CONFIG = {
   prenom1: "Raoul", prenom2: "Nimosette", initiales: "R & N",
   dateISO: "2026-12-18T09:00:00", dateTexte: "18 et 19 décembre 2026",
   accueil: "Avec amour et gratitude, nous serions heureux de partager ces moments précieux avec vous.",
-  salle: "Santchou Ville", adresse: "Lieu exact à préciser", carte: "Santchou, Cameroun",
+  salle: "Santchou Ville", adresse: "Hotel de Ville de Santchou", carte: "Mairie de Santchou, Cameroun",
   hashtag: "#RaoulEtNimosette",
   photoAccueil: "couple.jpg",
   galerie: ["photo1.jpg","photo2.jpg","photo3.jpg","photo4.jpg"],

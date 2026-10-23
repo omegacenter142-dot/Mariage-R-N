@@ -20,7 +20,7 @@ const CONFIG = {
   couleurs: [{nom:"Bleu marine",hex:"#0B1E5B"},{nom:"Or",hex:"#D4AF37"},{nom:"Blanc",hex:"#FFFFFF"}],
   limite: "1er décembre 2026",
   telephones: ["698075099", "650211546"],
-  lienReponse: "https://wa.me/237698075099?text=" + encodeURIComponent("Bonjour, je confirme ma présence au mariage de Raoul et Nimosette. Nom et prenom:")
+  lienReponse: "https://wa.me/237698075099?text=" + encodeURIComponent("Bonjour, je confirme ma présence au mariage de Raoul et Nimosette. Nom et Prénom:")
 };
 /* ====== FIN DES TEXTES ====== */
 

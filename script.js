@@ -8,9 +8,9 @@ const CONFIG = {
   photoAccueil: "couple.jpg",
   galerie: ["photo1.jpg","photo2.jpg","photo3.jpg","photo4.jpg"],
   histoire: [
-    {titre:"Notre rencontre", date:"Mois année", texte:"Racontez ici votre première rencontre."},
-    {titre:"Le premier rendez-vous", date:"Mois année", texte:"Le souvenir de votre premier rendez-vous."},
-    {titre:"La demande en mariage", date:"Mois année", texte:"Le moment où tout est devenu officiel."}
+    {titre:"Notre rencontre", date:"Mois année", texte:"Il faisait semblant de ne pas la regarder. Elle faisait semblant de ne pas le voir. Le destin, lui, prenait des notes."},
+    {titre:"Le premier rendez-vous", date:"Mois année", texte:"Il est arrivé trop tôt et a fait trois fois le tour du quartier pour ne pas paraître pressé. Elle regardait par la fenêtre."},
+    {titre:"La demande en mariage", date:"Mois année", texte:"Un genou à terre, un discours oublié et des mains qui tremblent. Elle a dit oui, puis elle a pleuré de joie."}
   ],
   programme: [
     {heure:"Ven. 18", titre:"Mariage coutumier", texte:"Vendredi 18 décembre 2026, Santchou Ville"},

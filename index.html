@@ -1,59 +1,99 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Mariage de Raoul &amp; Nimosette</title>
-<meta name="theme-color" content="#0B1E5B">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500&family=Cinzel:wght@400;500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a1a4f">
+<title>Raoul & Nimosette · Invitation de mariage</title>
+<meta name="description" content="Raoul & Nimosette vous invitent à leur mariage les 18 et 19 décembre 2026 à Santchou Ville.">
+<meta property="og:title" content="Raoul & Nimosette · Invitation de mariage">
+<meta property="og:image" content="photos/couple.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,600;1,500&family=Cinzel:wght@400;600&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+<!-- ═══════════ 1) VOS TEXTES : MODIFIEZ ICI ═══════════ -->
+<script>
+const SITE = {
+  prenom1: "Raoul",
+  prenom2: "Nimosette",
+  initiales: "R&N",
+  hashtag: "#RaoulEtNimosette",
+  accueil: "Avec amour et gratitude, nous serions heureux de partager ces moments précieux avec vous.",
+  theme: "Thème : Amour",
+
+  // Date du compte à rebours (début des festivités, heure du Cameroun +01:00)
+  dateCible: "2026-12-18T10:00:00+01:00",
+  jours: [
+    { titre: "Mariage coutumier", date: "Vendredi 18 décembre 2026" },
+    { titre: "Mariage civil & religieux", date: "Samedi 19 décembre 2026" }
+  ],
+
+  histoire: [
+    { emoji:"👀", titre:"Le regard qui a tout déclenché", date:"À compléter : mois année",
+      texte:"Il a fait semblant de ne pas la regarder. Elle a fait semblant de ne pas l'avoir vu. Les deux jouaient très mal. Le destin, lui, prenait des notes.",
+      aparte:"« Moi ? Je regardais le paysage. »", jauge:["Papillons dans le ventre",85] },
+    { emoji:"🍽️", titre:"Le premier rendez-vous", date:"À compléter : mois année",
+      texte:"Il avait préparé trois phrases pour paraître sûr de lui. Il en a oublié deux. Elle riait déjà. Le repas a duré deux heures de plus que prévu, et personne n'a regardé l'heure.",
+      aparte:"« On reprend le même menu ? »", jauge:["Stress de monsieur",92] },
+    { emoji:"💍", titre:"La demande en mariage", date:"À compléter : mois année",
+      texte:"Il avait écrit un discours magnifique. Il a dit « veux-tu… » et elle a répondu oui avant la fin de la phrase. Les larmes ont fait le reste. Le discours est disponible sur demande.",
+      aparte:"« Oui. Évidemment oui. »", jauge:["Larmes de joie",100] }
+  ],
+  histoireIntro: "La version officielle, avec les commentaires du public.",
+  histoireFin: "À suivre… le grand final, avec vous dans la salle.",
+
+  // Photos : remplacez les fichiers du dossier « photos » en gardant les mêmes noms
+  photoAccueil: "photos/couple.jpg",
+  galerie: ["photos/photo1.jpg","photos/photo2.jpg","photos/photo3.jpg","photos/photo4.jpg","photos/photo5.jpg"],
+
+  programme: [
+    { jour: "Ven. 18", titre: "Mariage coutumier", detail: "Vendredi 18 décembre 2026, Santchou Ville" },
+    { jour: "Sam. 19", titre: "Mariage civil et religieux", detail: "Samedi 19 décembre 2026, Santchou Ville" }
+  ],
+
+  lieu: {
+    nom: "Salle à préciser",
+    adresse: "Santchou Ville",
+    ville: "Santchou, Cameroun",
+    recherche: "Santchou, Cameroun"      // texte envoyé à Google Maps (mettez l'adresse exacte ici)
+  },
+
+  tenue: {
+    texte: "Nous vous invitons à porter du bleu marine, de l'or ou du blanc pour célébrer avec nous.",
+    couleurs: [["Bleu marine","#0a1a4f"],["Or","#c9a24a"],["Blanc","#ffffff"]]
+  },
+
+  rsvp: {
+    texte: "Merci de nous confirmer votre présence avant le",
+    delai: "30 novembre 2026",
+    lien: "",                    // lien de votre formulaire (Google Forms…). Vide = message WhatsApp
+    whatsapp: "237698075099",    // numéro avec indicatif, sans + ni espaces
+    telephones: ["698075099","650211546"]
+  }
+};
+</script>
+
 <link rel="stylesheet" href="style.css">
 </head>
-<body class="locked">
-<div id="intro">
-  <div class="env">
-    <div class="back"></div>
-    <div class="card"><span class="script" data-t="noms"></span></div>
-    <div class="pocket"></div><div class="flap"></div>
-    <div class="seal" data-t="initiales"></div>
+<body class="lock">
+
+<!-- Ouverture -->
+<div id="intro" role="dialog" aria-label="Invitation">
+  <div class="stage">
+    <div class="env" id="env">
+      <div class="back"></div>
+      <div class="card"><div><small>VOUS ÊTES INVITÉS</small><span id="cardNames"></span></div></div>
+      <div class="pocket"><i class="b"></i><i class="l"></i><i class="r"></i></div>
+      <div class="flap"></div>
+      <div class="seal" id="seal"></div>
+    </div>
+    <button class="open-btn" id="openBtn">Ouvrir notre invitation</button>
   </div>
-  <button id="open" type="button">Ouvrir notre invitation</button>
 </div>
 
-<main id="site">
-  <header class="hero">
-    <img class="bg" data-photo alt="">
-    <div class="veil"></div>
-    <div class="hero-in">
-      <img class="portrait" data-photo alt="Raoul et Nimosette">
-      <p class="sub">Nous nous marions</p>
-      <h1 class="script"><span data-t="prenom1"></span><span class="amp">&amp;</span><span data-t="prenom2"></span></h1>
-      <p class="date" data-t="dateTexte"></p>
-      <p class="welcome" data-t="accueil"></p>
-      <div class="cd" id="cd" aria-live="off"></div>
-    </div>
-  </header>
+<main id="app"></main>
 
-  <section id="histoire"><p class="sub">Notre histoire</p><h2 class="words">Comment tout a commencé</h2><ol class="tl" id="tl"></ol></section>
-
-  <section class="wide" id="galerie"><p class="sub">Galerie</p><h2 class="words">Quelques instants à nous</h2><div class="gal" id="gal"></div></section>
-
-  <section id="programme"><p class="sub">Le programme</p><h2 class="words">Au Programme</h2><ul class="prog" id="prog"></ul></section>
-
-  <section id="lieu"><p class="sub">Le lieu</p><h2 class="words">HOTEL DE VILLE DE SANTCHOU</h2>
-    <p class="place"><strong data-t="salle"></strong><br><span data-t="adresseComplete"></span></p>
-    <iframe id="map" title="Carte du lieu" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <a class="btn" id="route" target="_blank" rel="noopener">Ouvrir l’itinéraire</a></section>
-
-  <section id="tenue"><p class="sub">Tenue</p><h2 class="words">Le code vestimentaire</h2><p data-t="tenueTexte"></p><div class="sws" id="sws"></div></section>
-
-  <section id="rsvp"><p class="sub">Réponse</p><h2 class="words">Confirmer ma présence</h2>
-    <p>Merci de nous répondre avant le <strong data-t="limite"></strong>.</p>
-    <p class="tels" id="tels"></p>
-    <a class="btn" id="rsvpBtn" target="_blank" rel="noopener">Confirmer ma présence</a></section>
-
-  <footer><p class="script big" data-t="initiales"></p><p class="merci">Merci de faire partie de notre histoire</p><p class="sub" data-t="hashtag"></p></footer>
-</main>
 <script src="script.js"></script>
 </body>
 </html>
